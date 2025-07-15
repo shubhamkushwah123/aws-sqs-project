@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Consumer UI</title>
+</head>
+<body>
+    <h2>Messages from SQS</h2>
+    {% if messages %}
+        <ul>
+        {% for msg in messages %}
+            <li>{{ msg['Body'] }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No messages available.</p>
+    {% endif %}
+    <a href="{{ url_for('index') }}">Back</a>
+</body>
+</html>
